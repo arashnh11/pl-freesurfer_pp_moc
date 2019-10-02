@@ -1,5 +1,5 @@
 pl-freesurfer_pp_moc
-================
+====================
 
 .. image:: https://badge.fury.io/py/freesurfer_pp_moc.svg
     :target: https://badge.fury.io/py/freesurfer_pp_moc
