@@ -118,7 +118,7 @@ class Freesurfer_pp_moc(ChrisApp):
     TYPE                    = 'ds'
     DESCRIPTION             = 'A "dummy" app that contains some prior FreeSurfer output and simply copies this to the output directory.'
     DOCUMENTATION           = 'https://github.com/FNNDSC/pl-freesurfer_pp_moc'
-    VERSION                 = '2.0.2'
+    VERSION                 = '2.0.8'
     ICON                    = '' # url of an icon image
     LICENSE                 = 'Opensource (MIT)'
     MAX_NUMBER_OF_WORKERS   = 1  # Override with integer value
@@ -209,33 +209,6 @@ class Freesurfer_pp_moc(ChrisApp):
                             dest        = 'processDelay',
                             optional    = True,
                             default     = "0")
-        self.add_argument("-v", "--verbosity",
-                            help        = "verbosity level for app",
-                            type        = str,
-                            dest        = 'verbosity',
-                            optional    = True,
-                            default     = "0")
-        self.add_argument('--man',
-                            help        = 'if specified, print man page',
-                            type        = bool,
-                            dest        = 'b_man',
-                            action      = 'store_true',
-                            optional    = True,
-                            default     = False)
-        self.add_argument('--meta',
-                            help        = 'if specified, print plugin meta data',
-                            type        = bool,
-                            dest        = 'b_meta',
-                            action      = 'store_true',
-                            optional    = True,
-                            default     = False)
-        self.add_argument('--version',
-                            help        = 'if specified, print version number',
-                            type        = bool,
-                            dest        = 'b_version',
-                            action      = 'store_true',
-                            optional    = True,
-                            default     = False)
         self.add_argument("--jsonReturn",
                             help        = "output final return in json",
                             type        = bool,
