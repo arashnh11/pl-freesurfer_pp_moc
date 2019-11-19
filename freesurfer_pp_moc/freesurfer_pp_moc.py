@@ -41,13 +41,13 @@ Gstr_synopsis = """
 
     SYNOPSIS
 
-        python freesurfer_pp_moc.py                                         \\
+        python freesurfer_pp_moc.py                                     \\
             [-v <level>] [--verbosity <level>]                          \\
             [--version]                                                 \\
             [--man]                                                     \\
             [--meta]                                                    \\
             [--copySpec <copySpec>]                                     \\
-            [--ageSpec <ageSpec>]
+            [--ageSpec <ageSpec>]                                       \\
             <inputDir>                                                  \\
             <outputDir> 
 
@@ -55,9 +55,12 @@ Gstr_synopsis = """
 
         * To copy some directory in open storage to an output directory:
 
-            mkdir out
-            python pacscopy.py      --dir <someDirInOpenStorage>        \\
-                                    out
+            mkdir in out
+            python freesurfer_pp_moc.py                                 \\
+                --saveinputmeta --saveoutputmeta                        \\
+                -a 10-06-01                                             \\
+                -c stats,sag,cor,tra,3D                                 \\
+                in out  
 
     DESCRIPTION
 
@@ -118,7 +121,7 @@ class Freesurfer_pp_moc(ChrisApp):
     TYPE                    = 'ds'
     DESCRIPTION             = 'A "dummy" app that contains some prior FreeSurfer output and simply copies this to the output directory.'
     DOCUMENTATION           = 'https://github.com/FNNDSC/pl-freesurfer_pp_moc'
-    VERSION                 = '2.2.0'
+    VERSION                 = '2.2.2'
     ICON                    = '' # url of an icon image
     LICENSE                 = 'Opensource (MIT)'
     MAX_NUMBER_OF_WORKERS   = 1  # Override with integer value
