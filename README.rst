@@ -197,3 +197,8 @@ Singularity
             -a 10-06-01 \
             -c stats,sag,cor,tra,3D \
             /incoming /outgoing
+References
+----
+Sochat V, Prybol CJ, Kurtzer GM (2017)
+Enhancing reproducibility in scientific computing: Metrics and registry for Singularity containers.
+PLoS ONE 12(11): e0188511. https://doi.org/10.1371/journal.pone.0188511
