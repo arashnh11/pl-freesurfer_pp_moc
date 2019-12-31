@@ -164,7 +164,7 @@ To copy all the image directories from the ``10-yr/06-mo/01-da`` subject,
             -a 10-06-01                                                 \
             -c stats,sag,cor,tra,3D                                     \
             /incoming /outgoing            
-            
+sa            
 .. code:: bash
     singularity exec -B in:/incoming,out:/outgoing --pwd /usr/src/freesurfer_pp_moc \
             docker://fnndsc/pl-freesurfer_pp_moc python freesurfer_pp_moc.py \
