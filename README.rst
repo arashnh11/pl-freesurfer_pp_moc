@@ -93,11 +93,12 @@ This package can now run on multi-users HPC clusters and Supercomputing Centers 
 
 Examples
 --------
-
 Check available pre-processed runs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 To get a listing of the internal tree of already processed and available FreeSurfer choices:
+
+Docker
+****
 
 .. code:: bash
 
@@ -105,13 +106,16 @@ To get a listing of the internal tree of already processed and available FreeSur
             fnndsc/pl-freesurfer_pp_moc freesurfer_pp_moc.py            \
             -T ../preprocessed                                          \
             /incoming /outgoing
-            
+
+Singularity
+****
+
 .. code:: bash
     singularity exec -B in:/incoming,out:/outgoing --pwd /usr/src/freesurfer_pp_moc \
-            docker://fnndsc/pl-freesurfer_pp_moc python freesurfer_pp_moc.py \
-            -T ../preprocessed \ 
-            /incoming /outgoing 
-            
+    docker://fnndsc/pl-freesurfer_pp_moc python freesurfer_pp_moc.py                \
+    -T ../preprocessed                                                              \
+    /incoming /outgoing
+
 This will print a tree of the available choices of `preprocessed` data in a directory tree. 
 
 Copy the default for a selected pre-processed run
@@ -125,12 +129,7 @@ Select one run, say the `08-yr/07-mo/16-da` and specify that to copy:
             fnndsc/pl-freesurfer_pp_moc freesurfer_pp_moc.py            \
             -a 08-07-16 \
             /incoming /outgoing
-            
-.. code:: bash
-    singularity exec -B in:/incoming,out:/outgoing --pwd /usr/src/freesurfer_pp_moc \
-            docker://fnndsc/pl-freesurfer_pp_moc python freesurfer_pp_moc.py \
-            -a 08-07-16 \
-            /incoming /outgoing            
+          
 
 Simulate a processing delay
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -165,8 +164,7 @@ To copy all the image directories from the ``10-yr/06-mo/01-da`` subject,
             -c stats,sag,cor,tra,3D                                     \
             /incoming /outgoing     
 
-.. code:: bash
-    hello
+
     
 asdasd
 
