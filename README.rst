@@ -88,8 +88,8 @@ This package can now run on multi-users HPC clusters and Supercomputing Centers 
 
     mkdir in out && chmod 777 out
     singularity exec -B in:/incoming,out:/outgoing --pwd /usr/src/freesurfer_pp_moc \
-    docker://fnndsc/pl-freesurfer_pp_moc python freesurfer_pp_moc.py \
-    /incoming /outgoing    
+            docker://fnndsc/pl-freesurfer_pp_moc python freesurfer_pp_moc.py \
+            /incoming /outgoing    
 
 Examples
 --------
@@ -111,10 +111,11 @@ Singularity
 ****
 
 .. code:: bash
+
     singularity exec -B in:/incoming,out:/outgoing --pwd /usr/src/freesurfer_pp_moc \
-    docker://fnndsc/pl-freesurfer_pp_moc python freesurfer_pp_moc.py                \
-    -T ../preprocessed                                                              \
-    /incoming /outgoing
+            docker://fnndsc/pl-freesurfer_pp_moc python freesurfer_pp_moc.py        \
+            -T ../preprocessed                                                      \
+            /incoming /outgoing    
 
 This will print a tree of the available choices of `preprocessed` data in a directory tree. 
 
@@ -123,19 +124,34 @@ Copy the default for a selected pre-processed run
 
 Select one run, say the `08-yr/07-mo/16-da` and specify that to copy:
 
+Docker
+****
+
 .. code:: bash
 
     docker run --rm -v $(pwd)/in:/incoming -v $(pwd)/out:/outgoing      \
             fnndsc/pl-freesurfer_pp_moc freesurfer_pp_moc.py            \
             -a 08-07-16 \
             /incoming /outgoing
-          
+
+
+Singularity
+****
+
+.. code:: bash
+
+    singularity exec -B in:/incoming,out:/outgoing --pwd /usr/src/freesurfer_pp_moc \
+            docker://fnndsc/pl-freesurfer_pp_moc python freesurfer_pp_moc.py \
+            -a 08-07-16 \
+            /incoming /outgoing 
 
 Simulate a processing delay
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To simulate a processing delay, specify some time in seconds:
 
+Docker
+****
 .. code:: bash
 
     docker run --rm -v $(pwd)/in:/incoming -v $(pwd)/out:/outgoing      \
@@ -143,8 +159,12 @@ To simulate a processing delay, specify some time in seconds:
             -a 08-07-16                                                 \
             -P 20                                                       \
             /incoming /outgoing
-            
+
+Singularity
+****
+
 .. code:: bash
+
     singularity exec -B in:/incoming,out:/outgoing --pwd /usr/src/freesurfer_pp_moc \
             docker://fnndsc/pl-freesurfer_pp_moc python freesurfer_pp_moc.py \
             -a 08-07-16 \
@@ -156,6 +176,9 @@ Explicitly copy all the data including images from a pre-processed run
 
 To copy all the image directories from the ``10-yr/06-mo/01-da`` subject, 
 
+Docker
+****
+
 .. code:: bash
 
     docker run --rm -v $(pwd)/in:/incoming -v $(pwd)/out:/outgoing      \
@@ -164,13 +187,13 @@ To copy all the image directories from the ``10-yr/06-mo/01-da`` subject,
             -c stats,sag,cor,tra,3D                                     \
             /incoming /outgoing     
 
+Singularity
+****
 
-    
-asdasd
+.. code:: bash
 
-singularity exec -B in:/incoming,out:/outgoing --pwd /usr/src/freesurfer_pp_moc \
-docker://fnndsc/pl-freesurfer_pp_moc python freesurfer_pp_moc.py \
--a 10-06-01 \
--c stats,sag,cor,tra,3D \
-/incoming /outgoing
-```
+    singularity exec -B in:/incoming,out:/outgoing --pwd /usr/src/freesurfer_pp_moc \
+            docker://fnndsc/pl-freesurfer_pp_moc python freesurfer_pp_moc.py \
+            -a 10-06-01 \
+            -c stats,sag,cor,tra,3D \
+            /incoming /outgoing
