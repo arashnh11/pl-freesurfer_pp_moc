@@ -1,0 +1,5 @@
+Bootstrap: docker
+From: fnndsc/pl-freesurfer_pp_moc
+
+%labels 
+AUTHOR fnndsc "dev@babymri.org"
