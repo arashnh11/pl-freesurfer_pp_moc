@@ -36,7 +36,7 @@ Synopsis
 Run
 ----
 
-This ``plugin`` can be run in two modes: natively as a python package or as a containerized docker image. The PyPI mode is largely included for completeness sake and only useful if run against some pre-processed tree that exists in the filesystem. 
+This ``plugin`` can be run in three modes: natively as a python package, as a containerized docker image, or as a containerized singularity image on any HPC Clusters. The PyPI mode is largely included for completeness sake and only useful if run against some pre-processed tree that exists in the filesystem. 
 
 Using PyPI
 ~~~~~~~~~~
