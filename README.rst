@@ -79,6 +79,10 @@ In the simplest sense, the plugin can be run with
 
 which will copy **only** the internal `stats` directory from a ``10-yr/06-mo/01-da`` subject to the output. By specifying a ``--copySpec stats,3D,sag,cor,tra`` several additional directories containing png image frames through parcellated sagittal, coronal, and transverse (axial) planes as well as multiple 3D images are also copied.
 
+Using ``singularity exec``
+~~~~~~~~~~~~~~~~~~~~
+
+
 Examples
 --------
 
@@ -133,6 +137,3 @@ To copy all the image directories from the ``10-yr/06-mo/01-da`` subject,
             -a 10-06-01                                                 \
             -c stats,sag,cor,tra,3D                                     \
             /incoming /outgoing            
-
-Using ``singularity exec``
-~~~~~~~~~~~~~~~~~~~~
