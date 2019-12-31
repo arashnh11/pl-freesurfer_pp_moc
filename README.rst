@@ -134,7 +134,7 @@ To copy all the image directories from the ``10-yr/06-mo/01-da`` subject,
             -c stats,sag,cor,tra,3D                                     \
             /incoming /outgoing            
 
-Using ``docker run``
+Using ``singularity exec``
 ~~~~~~~~~~~~~~~~~~~~
 
 The real utility of this package is to run it containerized against bundled data that is packed into the container.
