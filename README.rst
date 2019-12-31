@@ -163,12 +163,12 @@ To copy all the image directories from the ``10-yr/06-mo/01-da`` subject,
             fnndsc/pl-freesurfer_pp_moc freesurfer_pp_moc.py            \
             -a 10-06-01                                                 \
             -c stats,sag,cor,tra,3D                                     \
-            /incoming /outgoing            
-'''
+            /incoming /outgoing     
+            
 .. code:: bash
-    singularity exec -B in:/incoming,out:/outgoing --pwd /usr/src/freesurfer_pp_moc \
-            docker://fnndsc/pl-freesurfer_pp_moc python freesurfer_pp_moc.py \
-            -a 10-06-01 \
-            -c stats,sag,cor,tra,3D \
-            /incoming /outgoing 
-'''
+
+singularity exec -B in:/incoming,out:/outgoing --pwd /usr/src/freesurfer_pp_moc \
+docker://fnndsc/pl-freesurfer_pp_moc python freesurfer_pp_moc.py \
+-a 10-06-01 \
+-c stats,sag,cor,tra,3D \
+/incoming /outgoing
