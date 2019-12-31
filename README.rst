@@ -87,7 +87,7 @@ This package can now run on multi-users HPC clusters and Supercomputing Centers 
 .. code:: bash
 
     mkdir in out && chmod 777 out
-    singularity exec -B in:/incoming,out:/outgoing --pwd /usr/src/freesurfer_pp_moc \
+    singularity exec -C -B in:/incoming,out:/outgoing --pwd /usr/src/freesurfer_pp_moc \
             docker://fnndsc/pl-freesurfer_pp_moc python freesurfer_pp_moc.py \
             /incoming /outgoing    
 
@@ -112,7 +112,7 @@ Singularity
 
 .. code:: bash
 
-    singularity exec -B in:/incoming,out:/outgoing --pwd /usr/src/freesurfer_pp_moc \
+    singularity exec -C -B in:/incoming,out:/outgoing --pwd /usr/src/freesurfer_pp_moc \
             docker://fnndsc/pl-freesurfer_pp_moc python freesurfer_pp_moc.py        \
             -T ../preprocessed                                                      \
             /incoming /outgoing    
@@ -140,7 +140,7 @@ Singularity
 
 .. code:: bash
 
-    singularity exec -B in:/incoming,out:/outgoing --pwd /usr/src/freesurfer_pp_moc \
+    singularity exec -C -B in:/incoming,out:/outgoing --pwd /usr/src/freesurfer_pp_moc \
             docker://fnndsc/pl-freesurfer_pp_moc python freesurfer_pp_moc.py \
             -a 08-07-16 \
             /incoming /outgoing 
@@ -165,7 +165,7 @@ Singularity
 
 .. code:: bash
 
-    singularity exec -B in:/incoming,out:/outgoing --pwd /usr/src/freesurfer_pp_moc \
+    singularity exec -C -B in:/incoming,out:/outgoing --pwd /usr/src/freesurfer_pp_moc \
             docker://fnndsc/pl-freesurfer_pp_moc python freesurfer_pp_moc.py \
             -a 08-07-16 \
             -P 20 \
@@ -192,7 +192,7 @@ Singularity
 
 .. code:: bash
 
-    singularity exec -B in:/incoming,out:/outgoing --pwd /usr/src/freesurfer_pp_moc \
+    singularity exec -C -B in:/incoming,out:/outgoing --pwd /usr/src/freesurfer_pp_moc \
             docker://fnndsc/pl-freesurfer_pp_moc python freesurfer_pp_moc.py \
             -a 10-06-01 \
             -c stats,sag,cor,tra,3D \
