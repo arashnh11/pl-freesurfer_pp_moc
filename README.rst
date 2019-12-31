@@ -82,7 +82,7 @@ which will copy **only** the internal `stats` directory from a ``10-yr/06-mo/01-
 Using ``singularity exec``
 ~~~~~~~~~~~~~~~~~~~~
 
-This package can now run on multi-users HPC clusters and Supercomputing Centers using singularity. This will allow standard users to scale up the utility on HPC computing resources without the need for root/sudo privillages.
+This package can now run on multi-users HPC clusters and Supercomputing Centers using singularity (https://sylabs.io/). This will allow standard users to scale up the utility on HPC computing resources without the need for root/sudo privillages.
 
 .. code:: bash
 
@@ -164,10 +164,11 @@ To copy all the image directories from the ``10-yr/06-mo/01-da`` subject,
             -a 10-06-01                                                 \
             -c stats,sag,cor,tra,3D                                     \
             /incoming /outgoing            
-
+'''
 .. code:: bash
     singularity exec -B in:/incoming,out:/outgoing --pwd /usr/src/freesurfer_pp_moc \
             docker://fnndsc/pl-freesurfer_pp_moc python freesurfer_pp_moc.py \
             -a 10-06-01 \
             -c stats,sag,cor,tra,3D \
             /incoming /outgoing 
+'''
